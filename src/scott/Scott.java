@@ -5,17 +5,19 @@
  */
 package scott;
 
-/**
- *
- * @author Uriel
- */
+import connection.Cl_connection;
+import java.sql.Connection;
+
 public class Scott {
 
-    /**
-     * @param args the command line arguments
-     */
+    public static Connection conecction = null;
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        try {
+            Cl_connection conn = new Cl_connection();
+        } catch (Exception e) {
+            System.err.println("Error");
+        }
     }
     
 }

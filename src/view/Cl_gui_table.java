@@ -33,12 +33,14 @@ public class Cl_gui_table extends javax.swing.JFrame {
      */
     public Cl_gui_table() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     public Cl_gui_table(boolean isDept) {
         this.isDept = isDept;
         initComponents();
         listing(isDept);
+        this.setLocationRelativeTo(null);
     }
 
     public void listing(boolean isDept) {

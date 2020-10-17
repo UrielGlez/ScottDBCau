@@ -41,12 +41,12 @@ public class Cl_controller_emp {
             table.addColumn("Department");
             
             
-            CallableStatement cstmt = connection.prepareCall("( ? = call FN_LISTAR_EMP)");
+            CallableStatement cstmt = connection.prepareCall("{ ? = call FN_LISTAR_EMP}");
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
             cstmt.execute();
             ResultSet rs = ((OracleCallableStatement)cstmt).getCursor(1);
             
-            String data[] = new String[3];
+            String data[] = new String[8];
             while(rs.next()){
                 data[0] = String.valueOf(rs.getInt("EMPNO"));
                 data[1] = rs.getString("ENAME");

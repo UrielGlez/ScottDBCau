@@ -15,16 +15,19 @@ import controller.Cl_controller_emp;
  */
 public class Cl_gui_table extends javax.swing.JFrame {
 
+    boolean isDept;
+
     Cl_controller_dept cdept = new Cl_controller_dept();
     Cl_controller_emp cemp = new Cl_controller_emp();
 
     Cl_gui_dept_insert dins;
     Cl_gui_dept_update dupd;
-    Cl_gui_delete ddel;
-    
+
     Cl_gui_emp_insert eins;
     Cl_gui_emp_update eupd;
-    Cl_gui_delete edel;
+
+    Cl_gui_delete del;
+
     /**
      * Creates new form Department_view
      */
@@ -33,6 +36,7 @@ public class Cl_gui_table extends javax.swing.JFrame {
     }
 
     public Cl_gui_table(boolean isDept) {
+        this.isDept = isDept;
         initComponents();
         listing(isDept);
     }
@@ -100,7 +104,7 @@ public class Cl_gui_table extends javax.swing.JFrame {
             }
         });
 
-        lblTittle.setText("Departmens");
+        lblTittle.setText("Tittle");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,15 +146,29 @@ public class Cl_gui_table extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
-        
+        if (isDept) {
+            dins = new Cl_gui_dept_insert();
+            dins.setVisible(true);
+        } else {
+            eins = new Cl_gui_emp_insert();
+            eins.setVisible(true);
+        }
+
     }//GEN-LAST:event_btnInsertActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-     
+        if (isDept) {
+            dupd = new Cl_gui_dept_update();
+            dupd.setVisible(true);
+        } else {
+            eupd = new Cl_gui_emp_update();
+            eupd.setVisible(true);
+        }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        
+        del = new Cl_gui_delete(isDept);
+        del.setVisible(true);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**

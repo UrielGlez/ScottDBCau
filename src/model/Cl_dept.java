@@ -5,6 +5,12 @@
  */
 package model;
 
+/**
+ * @author Carlos Tomás García Martínez 320605
+ * @author Uriel Omar González jimenez  320736
+ * @author Alejandro Aguirre Baeza      320646
+ */ 
+
 public class Cl_dept {
     private int deptno;
     private String dname;

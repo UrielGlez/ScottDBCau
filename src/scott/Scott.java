@@ -7,7 +7,11 @@ package scott;
 
 import connection.Cl_connection;
 import java.sql.Connection;
-
+/**
+ * @author Carlos Tomás García Martínez 320605
+ * @author Uriel Omar González jimenez  320736
+ * @author Alejandro Aguirre Baeza      320646
+ */
 public class Scott {
 
     public static Connection conecction = null;

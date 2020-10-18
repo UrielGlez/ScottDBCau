@@ -87,13 +87,15 @@ public class Cl_controller_emp {
         }
     }
     
-    public boolean deleteEmp(){
+    public boolean deleteEmp(int empno){
         try {
-            CallableStatement cstmt = connection.prepareCall("( ? = call FN_LISTAR_EMP)");
-            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            CallableStatement cstmt = connection.prepareCall("{ call PR_delete_Emp( ? )}");
+            cstmt.setInt(1,empno);
             cstmt.execute();
+            System.out.println("Empleado " + empno + " eliminado");
             return true;
         } catch (Exception e) {
+            System.out.println("Exception: " + e);
             return false;
         }
     }

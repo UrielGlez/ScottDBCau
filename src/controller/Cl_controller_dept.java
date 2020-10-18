@@ -58,13 +58,23 @@ public class Cl_controller_dept {
         }
     }
 
-    public boolean insertDept() {
+    public boolean insertDept(int depno, String name, String loc) {
         try {
-            CallableStatement cstmt = connection.prepareCall("{ ? = call FN_LISTAR_DEPT}");
-            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            CallableStatement cstmt = connection.prepareCall("{ call PR_add_Deptno( ? , ? , ? )}");
+           
+            //IN values 
+            cstmt.setInt(1,depno);
+            cstmt.setString(2,name);
+            cstmt.setString(3,loc);
+            
+            //OUT values
+            //cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
             cstmt.execute();
+            
+            System.out.println("Insertado correctamente");
             return true;
         } catch (Exception e) {
+            System.out.println("Exception: " + e);
             return false;
         }
     }
@@ -76,17 +86,21 @@ public class Cl_controller_dept {
             cstmt.execute();
             return true;
         } catch (Exception e) {
+            System.out.println("Exception: " + e);
             return false;
         }
     }
 
-    public boolean deleteDept() {
+    public boolean deleteDept(int depno) {
         try {
-            CallableStatement cstmt = connection.prepareCall("{ ? = call FN_LISTAR_DEPT}");
-            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            CallableStatement cstmt = connection.prepareCall("{ call PR_delete_Deptno( ? )}");
+            //cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            cstmt.setInt(1,depno);
             cstmt.execute();
+            System.out.println("Department " + depno + " deleted");
             return true;
         } catch (Exception e) {
+            System.out.println("Exception: " + e);
             return false;
         }
     }

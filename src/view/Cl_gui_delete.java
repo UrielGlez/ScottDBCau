@@ -10,12 +10,29 @@ package view;
  * @author carlo
  */
 public class Cl_gui_delete extends javax.swing.JFrame {
+    boolean isDept;
 
     /**
      * Creates new form Cl_gui_dept_delete
      */
     public Cl_gui_delete() {
         initComponents();
+    }
+
+    public Cl_gui_delete(boolean isDept) {
+        this.isDept = isDept;
+        initComponents();
+        setText(isDept);
+    }
+
+    public void setText(boolean isDept) {
+        if (isDept) {
+            lblTittle.setText("Delete Department");
+            lblNum.setText("Department ID");
+        } else {
+            lblTittle.setText("Delete Employee");
+            lblNum.setText("Employee ID");
+        }
     }
 
     /**
@@ -39,6 +56,11 @@ public class Cl_gui_delete extends javax.swing.JFrame {
         lblTittle.setText("Delete");
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -54,11 +76,12 @@ public class Cl_gui_delete extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(fldNum)
-                        .addGap(61, 61, 61))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGap(175, 175, 175))))
+                        .addGap(175, 175, 175))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(fldNum, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -78,6 +101,14 @@ public class Cl_gui_delete extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+       if(isDept){
+           
+       }else{
+           
+       }
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**
      * @param args the command line arguments

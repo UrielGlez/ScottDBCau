@@ -113,7 +113,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblTittle">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Departmens"/>
+        <Property name="text" type="java.lang.String" value="Tittle"/>
       </Properties>
     </Component>
   </SubComponents>

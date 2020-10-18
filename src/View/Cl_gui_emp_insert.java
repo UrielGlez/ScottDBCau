@@ -5,6 +5,11 @@
  */
 package view;
 
+import controller.Cl_controller_emp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author Uriel
@@ -14,6 +19,8 @@ public class Cl_gui_emp_insert extends javax.swing.JFrame {
     /**
      * Creates new form Cl_gui_emp_insert
      */
+    Cl_controller_emp cEmp = new Cl_controller_emp();
+    
     public Cl_gui_emp_insert() {
         initComponents();
     }
@@ -40,14 +47,14 @@ public class Cl_gui_emp_insert extends javax.swing.JFrame {
         fldEmpNo = new javax.swing.JTextField();
         fldName = new javax.swing.JTextField();
         fldJob = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        fldManagerId = new javax.swing.JTextField();
         fldHireDate = new javax.swing.JTextField();
         fldCommission = new javax.swing.JTextField();
         fldSalary = new javax.swing.JTextField();
         fldDepartmentId = new javax.swing.JTextField();
         btnEmpInsert = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblInsertEmployees.setText("Insert Employees");
 
@@ -80,6 +87,11 @@ public class Cl_gui_emp_insert extends javax.swing.JFrame {
         });
 
         btnEmpInsert.setText("Insert");
+        btnEmpInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpInsertActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,7 +120,7 @@ public class Cl_gui_emp_insert extends javax.swing.JFrame {
                             .addComponent(fldName, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(fldEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(fldJob, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fldManagerId, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(fldHireDate, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(fldCommission, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(fldSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,7 +148,7 @@ public class Cl_gui_emp_insert extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblManagerId, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fldManagerId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblHireDate, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -170,6 +182,20 @@ public class Cl_gui_emp_insert extends javax.swing.JFrame {
     private void fldJobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldJobActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fldJobActionPerformed
+
+    private void btnEmpInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpInsertActionPerformed
+        int empId = Integer.parseInt(fldEmpNo.getText()); 
+        String empName = fldName.getText();
+        String empJob = fldJob.getText();
+        String empHireDate = fldHireDate.getText();
+        int empManager = Integer.parseInt(fldManagerId.getText()); 
+        int empSalary = Integer.parseInt( fldSalary.getText()); 
+        int empCommission = Integer.parseInt(fldCommission.getText()); 
+        int empDeptno = Integer.parseInt(fldDepartmentId.getText()); 
+        
+        boolean hola = cEmp.insertEmp(empId, empName, empJob, empHireDate, empManager, empSalary, empCommission, empDeptno);
+        System.out.println(hola);
+    }//GEN-LAST:event_btnEmpInsertActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,10 +239,10 @@ public class Cl_gui_emp_insert extends javax.swing.JFrame {
     private javax.swing.JTextField fldEmpNo;
     private javax.swing.JTextField fldHireDate;
     private javax.swing.JTextField fldJob;
+    private javax.swing.JTextField fldManagerId;
     private javax.swing.JTextField fldName;
     private javax.swing.JTextField fldSalary;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lblCommission;
     private javax.swing.JLabel lblDepartmentId;
     private javax.swing.JLabel lblEmpNo;

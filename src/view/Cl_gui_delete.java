@@ -113,9 +113,11 @@ public class Cl_gui_delete extends javax.swing.JFrame {
        if(isDept){
            cdept = new Cl_controller_dept();
            cdept.deleteDept(Integer.parseInt(fldNum.getText()));
+           this.dispose();
        }else{
            cemp = new Cl_controller_emp();
            cemp.deleteEmp(Integer.parseInt(fldNum.getText()));
+           this.dispose();
        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 

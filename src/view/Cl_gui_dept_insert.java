@@ -126,6 +126,7 @@ public class Cl_gui_dept_insert extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         cdept.insertDept(Integer.parseInt(fldDeptNum.getText()),fldDeptName.getText(),fldDeptLoc.getText());
+        this.dispose();
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void fldDeptNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldDeptNumActionPerformed

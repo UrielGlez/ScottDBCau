@@ -197,6 +197,7 @@ public class Cl_gui_emp_insert extends javax.swing.JFrame {
         int empDeptno = Integer.parseInt(fldDepartmentId.getText()); 
         
         cEmp.insertEmp(empId, empName, empJob, empHireDate, empManager, empSalary, empCommission, empDeptno);
+        this.dispose();
     }//GEN-LAST:event_btnEmpInsertActionPerformed
 
     /**

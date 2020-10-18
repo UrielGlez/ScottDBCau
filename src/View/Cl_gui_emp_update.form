@@ -23,39 +23,32 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
-                      <Component id="lblInsertEmployees" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblName" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblJob" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblManagerId" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblHireDate" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblSalary" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblCommission" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblDepartmentId" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblEmpNo" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="fldName" min="-2" pref="183" max="-2" attributes="0"/>
-                          <Component id="fldEmpNo" min="-2" pref="183" max="-2" attributes="0"/>
-                          <Component id="fldJob" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
-                          <Component id="jTextField4" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
-                          <Component id="fldHireDate" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
-                          <Component id="fldCommission" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
-                          <Component id="fldSalary" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
-                          <Component id="fldDepartmentId" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
-                          <Component id="btnEmpInsert" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <Component id="lblName" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblJob" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblManagerId" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblHireDate" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblSalary" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCommission" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblDepartmentId" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblEmpNo" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblInsertEmployees" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldName" min="-2" pref="183" max="-2" attributes="0"/>
+                  <Component id="fldEmpNo" min="-2" pref="183" max="-2" attributes="0"/>
+                  <Component id="fldJob" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                  <Component id="jTextField4" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                  <Component id="fldHireDate" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                  <Component id="fldCommission" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                  <Component id="fldSalary" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                  <Component id="fldDepartmentId" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                  <Component id="btnEmpInsert" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="64" max="32767" attributes="0"/>
           </Group>
@@ -119,7 +112,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblInsertEmployees">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Insert Employees"/>
+        <Property name="text" type="java.lang.String" value="Update Employees"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -188,7 +181,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnEmpInsert">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Insert"/>
+        <Property name="text" type="java.lang.String" value="Update"/>
       </Properties>
     </Component>
   </SubComponents>

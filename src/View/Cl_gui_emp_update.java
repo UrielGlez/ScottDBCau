@@ -47,7 +47,7 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
         fldDepartmentId = new javax.swing.JTextField();
         btnEmpInsert = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblInsertEmployees.setText("Update Employees");
 

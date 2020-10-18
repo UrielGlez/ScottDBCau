@@ -69,7 +69,6 @@ public class Cl_controller_dept {
             
             cstmt.execute();
             
-            System.out.println("Insertado correctamente");
             return true;
         } catch (Exception e) {
             System.out.println("Exception: " + e);
@@ -95,7 +94,6 @@ public class Cl_controller_dept {
             //cstmt.registerOutParameter(1, OracleTypes.CURSOR);
             cstmt.setInt(1,depno);
             cstmt.execute();
-            System.out.println("Department " + depno + " deleted");
             return true;
         } catch (Exception e) {
             System.out.println("Exception: " + e);

@@ -10,6 +10,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 import oracle.jdbc.OracleCallableStatement;
@@ -42,7 +43,6 @@ public class Cl_controller_emp {
             table.addColumn("Comission");
             table.addColumn("Department");
             
-            
             CallableStatement cstmt = connection.prepareCall("{ ? = call FN_LISTAR_EMP}");
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
             cstmt.execute();
@@ -67,11 +67,45 @@ public class Cl_controller_emp {
         }
     }
     
+    public ArrayList getEmp(int empno){
+        ArrayList<String> data = new ArrayList<String>();   
+        try {
+            CallableStatement cstmt = connection.prepareCall("{ ? = call FN_show_Emp ( ? )}");
+            //IN values
+            cstmt.setInt(2, empno);
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            cstmt.execute();
+            ResultSet rs = ((OracleCallableStatement)cstmt).getCursor(1);
+            
+            while(rs.next()){
+                data.add(String.valueOf(rs.getInt("EMPNO")));
+                data.add(String.valueOf(rs.getString("ENAME")));
+                data.add(String.valueOf(rs.getString("JOB")));
+                data.add(String.valueOf(rs.getInt("MGR")));
+                data.add(String.valueOf(rs.getDate("HIREDATE")));
+                data.add(String.valueOf(rs.getInt("SAL")));
+                data.add(String.valueOf(rs.getInt("COMM")));
+                data.add(String.valueOf(rs.getInt("DEPTNO")));
+            } 
+            return data;
+        } catch (Exception e) {
+            data.add("Error");
+            data.add("Error");
+            data.add("Error");
+            data.add("Error");
+            data.add("Error");
+            data.add("Error");
+            data.add("Error");
+            data.add("Error");
+            return data;
+        }
+    }
+    
     public boolean insertEmp(int empno, String ename, String job, String hiredate, 
             int managerId, int salary, int commission, int deptno){
         try {
             Date parsedHireDate = new java.sql.Date(((java.util.Date) new SimpleDateFormat("dd/MM/yyyy").parse(hiredate)).getTime());
-            CallableStatement cstmt = connection.prepareCall("{ call addEmployee( ? , ? , ? , ? , ? , ? , ? , ? ) }");
+            CallableStatement cstmt = connection.prepareCall("{ call PR_add_Emp( ? , ? , ? , ? , ? , ? , ? , ? ) }");
             //IN values
             cstmt.setInt(1, empno);
             cstmt.setString(2, ename);
@@ -90,13 +124,27 @@ public class Cl_controller_emp {
         }
     }
     
-    public boolean updateEmp(){
+    public boolean updateEmp(int empno, int newEmpno, String ename, String job, String hiredate, 
+            int managerId, int salary, int commission, int deptno){
         try {
-            CallableStatement cstmt = connection.prepareCall("( ? = call FN_LISTAR_EMP)");
-            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            System.out.println(hiredate);
+            Date parsedHireDate = new java.sql.Date(((java.util.Date) new SimpleDateFormat("dd/MM/yyyy").parse(hiredate)).getTime());
+            CallableStatement cstmt = connection.prepareCall("{ call PR_update_Emp( ? , ? , ? , ? , ? , ? , ? , ? , ? ) }");
+            //IN values
+            cstmt.setInt(1, empno);
+            cstmt.setInt(2, newEmpno);
+            cstmt.setString(3, ename);
+            cstmt.setString(4, job);
+            cstmt.setInt(5, managerId);
+            cstmt.setDate(6, (java.sql.Date) parsedHireDate);
+            cstmt.setInt(7, salary);
+            cstmt.setInt(8, commission);
+            cstmt.setInt(9, deptno);
+            
             cstmt.execute();
             return true;
         } catch (Exception e) {
+            System.out.println(e);
             return false;
         }
     }

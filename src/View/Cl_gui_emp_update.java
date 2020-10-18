@@ -5,13 +5,18 @@
  */
 package view;
 
+import controller.Cl_controller_emp;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  * @author Carlos Tomás García Martínez 320605
  * @author Uriel Omar González jimenez  320736
  * @author Alejandro Aguirre Baeza      320646
  */ 
 public class Cl_gui_emp_update extends javax.swing.JFrame {
-
+    Cl_controller_emp cEmp = new Cl_controller_emp();
     /**
      * Creates new form Cl_gui_emp_insert
      */
@@ -42,12 +47,16 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
         fldEmpNo = new javax.swing.JTextField();
         fldName = new javax.swing.JTextField();
         fldJob = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        fldManagerId = new javax.swing.JTextField();
         fldHireDate = new javax.swing.JTextField();
         fldCommission = new javax.swing.JTextField();
         fldSalary = new javax.swing.JTextField();
         fldDepartmentId = new javax.swing.JTextField();
         btnEmpInsert = new javax.swing.JButton();
+        btnSearchEmp = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        lblNewEmployee = new javax.swing.JLabel();
+        fldNewEmp = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -82,37 +91,79 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
         });
 
         btnEmpInsert.setText("Update");
+        btnEmpInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpInsertActionPerformed(evt);
+            }
+        });
+
+        btnSearchEmp.setText("Buscar");
+        btnSearchEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchEmpActionPerformed(evt);
+            }
+        });
+
+        lblNewEmployee.setText("new number of employee:");
+
+        fldNewEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldNewEmpActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblEmpNo)
+                        .addGap(33, 33, 33)
+                        .addComponent(fldEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSearchEmp)
+                        .addGap(42, 42, 42))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblNewEmployee)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(fldNewEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(125, 125, 125))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblName)
-                    .addComponent(lblJob)
-                    .addComponent(lblManagerId)
-                    .addComponent(lblHireDate)
-                    .addComponent(lblSalary)
-                    .addComponent(lblCommission)
-                    .addComponent(lblDepartmentId)
-                    .addComponent(lblEmpNo))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblInsertEmployees)
-                    .addComponent(fldName, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fldEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fldJob, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fldHireDate, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fldCommission, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fldSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fldDepartmentId, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEmpInsert))
-                .addContainerGap(64, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel2)
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblName)
+                                    .addComponent(lblJob)
+                                    .addComponent(lblManagerId)
+                                    .addComponent(lblHireDate)
+                                    .addComponent(lblSalary)
+                                    .addComponent(lblCommission)
+                                    .addComponent(lblDepartmentId))
+                                .addGap(33, 33, 33)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(fldName, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fldJob, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fldManagerId, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fldHireDate, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fldCommission, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fldSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fldDepartmentId, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnEmpInsert)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(130, 130, 130)
+                                .addComponent(lblInsertEmployees))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,10 +171,17 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblInsertEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fldEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fldEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearchEmp)
+                    .addComponent(lblEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fldNewEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNewEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -134,7 +192,7 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblManagerId, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fldManagerId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblHireDate, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -151,11 +209,11 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDepartmentId, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fldDepartmentId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(btnEmpInsert))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnEmpInsert)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -168,6 +226,45 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
     private void fldJobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldJobActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fldJobActionPerformed
+
+    private void btnSearchEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchEmpActionPerformed
+        ArrayList<String> data;
+        data = cEmp.getEmp(Integer.parseInt(fldEmpNo.getText()));
+        String newDate = null;
+        try {
+            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(data.get(4));
+            newDate = new SimpleDateFormat("dd/MM/yyyy").format(date);
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+        fldNewEmp.setText(data.get(0));
+        fldName.setText(data.get(1));
+        fldJob.setText(data.get(2));
+        fldManagerId.setText(data.get(3));
+        fldHireDate.setText(newDate);
+        fldSalary.setText(data.get(5));
+        fldCommission.setText(data.get(6));
+        fldDepartmentId.setText(data.get(7));
+        
+    }//GEN-LAST:event_btnSearchEmpActionPerformed
+
+    private void fldNewEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldNewEmpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldNewEmpActionPerformed
+
+    private void btnEmpInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpInsertActionPerformed
+        int empId = Integer.parseInt(fldEmpNo.getText()); 
+        int newEmpId = Integer.parseInt(fldNewEmp.getText()); 
+        String empName = fldName.getText();
+        String empJob = fldJob.getText();
+        String empHireDate = fldHireDate.getText();
+        int empManager = Integer.parseInt(fldManagerId.getText()); 
+        int empSalary = Integer.parseInt( fldSalary.getText()); 
+        int empCommission = Integer.parseInt(fldCommission.getText()); 
+        int empDeptno = Integer.parseInt(fldDepartmentId.getText()); 
+        
+        cEmp.updateEmp(empId, newEmpId, empName, empJob, empHireDate, empManager, empSalary, empCommission, empDeptno);
+    }//GEN-LAST:event_btnEmpInsertActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,15 +304,18 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEmpInsert;
+    private javax.swing.JButton btnSearchEmp;
     private javax.swing.JTextField fldCommission;
     private javax.swing.JTextField fldDepartmentId;
     private javax.swing.JTextField fldEmpNo;
     private javax.swing.JTextField fldHireDate;
     private javax.swing.JTextField fldJob;
+    private javax.swing.JTextField fldManagerId;
     private javax.swing.JTextField fldName;
+    private javax.swing.JTextField fldNewEmp;
     private javax.swing.JTextField fldSalary;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblCommission;
     private javax.swing.JLabel lblDepartmentId;
     private javax.swing.JLabel lblEmpNo;
@@ -224,6 +324,7 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
     private javax.swing.JLabel lblJob;
     private javax.swing.JLabel lblManagerId;
     private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblNewEmployee;
     private javax.swing.JLabel lblSalary;
     // End of variables declaration//GEN-END:variables
 }

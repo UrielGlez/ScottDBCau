@@ -41,7 +41,7 @@ public class Cl_controller_emp {
             table.addColumn("Department");
             
             
-            CallableStatement cstmt = connection.prepareCall("( ? = call FN_LISTAR_EMP)");
+            CallableStatement cstmt = connection.prepareCall("{ ? = call FN_LISTAR_EMP}");
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
             cstmt.execute();
             ResultSet rs = ((OracleCallableStatement)cstmt).getCursor(1);

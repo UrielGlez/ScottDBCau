@@ -7,6 +7,7 @@ package view;
 
 import controller.Cl_controller_dept;
 import controller.Cl_controller_emp;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * @author Carlos Tomás García Martínez 320605
@@ -45,12 +46,16 @@ public class Cl_gui_table extends javax.swing.JFrame {
 
     public void listing(boolean isDept) {
         if (isDept) {
-            tblData.setModel(cdept.listDept());
+            refreshTable(cdept.listDept(), isDept);
             lblTittle.setText("Departments");
         } else {
-            tblData.setModel(cemp.listEmp());
+            refreshTable(cemp.listEmp(), isDept);
             lblTittle.setText("Employees");
         }
+    }
+
+    public void refreshTable(DefaultTableModel table, boolean isDept) {
+        tblData.setModel(table);
     }
 
     /**
@@ -155,7 +160,7 @@ public class Cl_gui_table extends javax.swing.JFrame {
             eins = new Cl_gui_emp_insert();
             eins.setVisible(true);
         }
-
+        this.dispose();
     }//GEN-LAST:event_btnInsertActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -166,11 +171,13 @@ public class Cl_gui_table extends javax.swing.JFrame {
             eupd = new Cl_gui_emp_update();
             eupd.setVisible(true);
         }
+        this.dispose();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         del = new Cl_gui_delete(isDept);
         del.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**

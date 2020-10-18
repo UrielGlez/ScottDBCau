@@ -71,7 +71,7 @@ public class Cl_controller_emp {
             int managerId, int salary, int commission, int deptno){
         try {
             Date parsedHireDate = new java.sql.Date(((java.util.Date) new SimpleDateFormat("dd/MM/yyyy").parse(hiredate)).getTime());
-            CallableStatement cstmt = connection.prepareCall("{ call addEmployee( ? , ? , ? , ? , ? , ? , ? , ? ) }");
+            CallableStatement cstmt = connection.prepareCall("{ call PR_add_Emp( ? , ? , ? , ? , ? , ? , ? , ? ) }");
             //IN values
             cstmt.setInt(1, empno);
             cstmt.setString(2, ename);

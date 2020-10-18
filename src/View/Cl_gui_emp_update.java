@@ -82,6 +82,11 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
         });
 
         btnEmpInsert.setText("Update");
+        btnEmpInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpInsertActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,6 +173,11 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
     private void fldJobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldJobActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fldJobActionPerformed
+
+    private void btnEmpInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpInsertActionPerformed
+        // TODO add your handling code here:
+    this.dispose();
+    }//GEN-LAST:event_btnEmpInsertActionPerformed
 
     /**
      * @param args the command line arguments

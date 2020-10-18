@@ -9,6 +9,7 @@ import connection.Cl_connection;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.internal.OracleTypes;
@@ -58,17 +59,17 @@ public class Cl_controller_dept {
         }
     }
 
-    public boolean insertDept(int depno, String name, String loc) {
+    public boolean insertDept(int depno, String dname, String loc) {
         try {
             CallableStatement cstmt = connection.prepareCall("{ call PR_add_Deptno( ? , ? , ? )}");
-           
+
             //IN values 
-            cstmt.setInt(1,depno);
-            cstmt.setString(2,name);
-            cstmt.setString(3,loc);
-            
+            cstmt.setInt(1, depno);
+            cstmt.setString(2, dname);
+            cstmt.setString(3, loc);
+
             cstmt.execute();
-            
+
             System.out.println("Insertado correctamente");
             return true;
         } catch (Exception e) {
@@ -77,10 +78,15 @@ public class Cl_controller_dept {
         }
     }
 
-    public boolean updateDept() {
+    public boolean updateDept(int depno, int newdepno, String dname, String loc) {
         try {
-            CallableStatement cstmt = connection.prepareCall("{ ? = call FN_LISTAR_DEPT}");
-            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            CallableStatement cstmt = connection.prepareCall("{ call PR_update_Deptno ( ? , ? , ? , ? )}");
+
+            cstmt.setInt(1, depno);
+            cstmt.setInt(2, newdepno);
+            cstmt.setString(3, dname);
+            cstmt.setString(4, loc);
+
             cstmt.execute();
             return true;
         } catch (Exception e) {
@@ -89,11 +95,38 @@ public class Cl_controller_dept {
         }
     }
 
+    public ArrayList<String> getDept(int depno) {
+        ArrayList<String> data = new ArrayList<String>();
+        try {
+            CallableStatement cstmt = connection.prepareCall("{ ? = call FN_show_Dept ( ? )}");
+
+            //IN data
+            cstmt.setInt(2, depno);
+
+            //OUT data
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            cstmt.execute();
+
+            ResultSet rs = ((OracleCallableStatement) cstmt).getCursor(1);
+            while (rs.next()) {
+                data.add(String.valueOf(rs.getInt("deptno")));
+                data.add(rs.getString("dname"));
+                data.add(rs.getString("loc"));
+            }
+            return data;
+        } catch (Exception e) {
+            data.add("Error");
+            data.add("Error");
+            data.add("Error");
+            return data;
+        }
+    }
+
     public boolean deleteDept(int depno) {
         try {
             CallableStatement cstmt = connection.prepareCall("{ call PR_delete_Deptno( ? )}");
             //cstmt.registerOutParameter(1, OracleTypes.CURSOR);
-            cstmt.setInt(1,depno);
+            cstmt.setInt(1, depno);
             cstmt.execute();
             System.out.println("Department " + depno + " deleted");
             return true;

@@ -67,8 +67,6 @@ public class Cl_controller_dept {
             cstmt.setString(2,name);
             cstmt.setString(3,loc);
             
-            //OUT values
-            //cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
             cstmt.execute();
             
             System.out.println("Insertado correctamente");

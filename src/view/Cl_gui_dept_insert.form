@@ -100,15 +100,27 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="fldDeptNum">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fldDeptNumActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="fldDeptName">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fldDeptNameActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="fldDeptLoc">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fldDeptLocActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnSave">
       <Properties>
         <Property name="text" type="java.lang.String" value="Insert"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

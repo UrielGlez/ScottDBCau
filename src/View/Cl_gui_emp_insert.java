@@ -11,9 +11,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- *
- * @author Uriel
+ * @author Carlos Tomás García Martínez 320605
+ * @author Uriel Omar González jimenez  320736
+ * @author Alejandro Aguirre Baeza      320646
  */
+
 public class Cl_gui_emp_insert extends javax.swing.JFrame {
 
     /**
@@ -23,6 +25,7 @@ public class Cl_gui_emp_insert extends javax.swing.JFrame {
     
     public Cl_gui_emp_insert() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

@@ -16,6 +16,7 @@ public class Cl_gui_dept_update extends javax.swing.JFrame {
      */
     public Cl_gui_dept_update() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

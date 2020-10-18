@@ -5,17 +5,21 @@
  */
 package view;
 
+import controller.Cl_controller_dept;
+
 /**
- *
- * @author carlo
+ * @author Carlos Tomás García Martínez 320605
+ * @author Uriel Omar González jimenez  320736
+ * @author Alejandro Aguirre Baeza      320646
  */
 public class Cl_gui_dept_insert extends javax.swing.JFrame {
-
+    Cl_controller_dept cdept = new Cl_controller_dept();
     /**
      * Creates new form Cl_gui_update
      */
     public Cl_gui_dept_insert() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -46,7 +50,30 @@ public class Cl_gui_dept_insert extends javax.swing.JFrame {
 
         lblDeptLoc.setText("Department location");
 
+        fldDeptNum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldDeptNumActionPerformed(evt);
+            }
+        });
+
+        fldDeptName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldDeptNameActionPerformed(evt);
+            }
+        });
+
+        fldDeptLoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldDeptLocActionPerformed(evt);
+            }
+        });
+
         btnSave.setText("Insert");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,6 +123,22 @@ public class Cl_gui_dept_insert extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        cdept.insertDept(Integer.parseInt(fldDeptNum.getText()),fldDeptName.getText(),fldDeptLoc.getText());
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void fldDeptNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldDeptNumActionPerformed
+    
+    }//GEN-LAST:event_fldDeptNumActionPerformed
+
+    private void fldDeptNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldDeptNameActionPerformed
+    
+    }//GEN-LAST:event_fldDeptNameActionPerformed
+
+    private void fldDeptLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldDeptLocActionPerformed
+    
+    }//GEN-LAST:event_fldDeptLocActionPerformed
 
     /**
      * @param args the command line arguments

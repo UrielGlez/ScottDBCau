@@ -36,7 +36,7 @@ public class Cl_controller_dept {
             table.addColumn("Name");
             table.addColumn("Localization");
             
-            CallableStatement cstmt = connection.prepareCall("( ? = call FN_LISTAR_DEPT)");
+            CallableStatement cstmt = connection.prepareCall("{ ? = call FN_LISTAR_DEPT}");
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
             cstmt.execute();
             ResultSet rs = ((OracleCallableStatement)cstmt).getCursor(1);

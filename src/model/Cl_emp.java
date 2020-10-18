@@ -10,7 +10,7 @@ import java.util.Date;
  *
  * @author Uriel
  */
-public class Cl_employee {
+public class Cl_emp {
     private int empno;
     private String ename;
     private String job;
@@ -20,9 +20,9 @@ public class Cl_employee {
     private int commission;
     private int deptno;
     
-    public Cl_employee() { }
+    public Cl_emp() { }
 
-    public Cl_employee(int empno, String ename, String job, String mgr, Date hiredate, int salary, int commision, int deptno) {
+    public Cl_emp(int empno, String ename, String job, String mgr, Date hiredate, int salary, int commision, int deptno) {
         this.deptno = deptno;
         this.empno = empno;
         this.job = job;

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+                      <Component id="lblInsertEmployees" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblName" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblJob" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblManagerId" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblHireDate" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblSalary" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCommission" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblDepartmentId" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEmpNo" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="fldName" min="-2" pref="183" max="-2" attributes="0"/>
+                          <Component id="fldEmpNo" min="-2" pref="183" max="-2" attributes="0"/>
+                          <Component id="fldJob" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                          <Component id="jTextField4" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                          <Component id="fldHireDate" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                          <Component id="fldCommission" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                          <Component id="fldSalary" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                          <Component id="fldDepartmentId" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                          <Component id="btnEmpInsert" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="64" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="lblInsertEmployees" min="-2" pref="26" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblEmpNo" alignment="0" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="fldEmpNo" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblName" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="fldName" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblJob" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="fldJob" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblManagerId" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblHireDate" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="fldHireDate" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblSalary" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="fldSalary" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblCommission" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="fldCommission" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblDepartmentId" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="fldDepartmentId" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEmpInsert" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblInsertEmployees">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Insert Employees"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Name:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblJob">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Job:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblManagerId">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="manager id:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblHireDate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="hire date:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblEmpNo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="number of employee:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblSalary">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="salary:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCommission">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="commission:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDepartmentId">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="department id:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldEmpNo">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fldEmpNoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldName">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldJob">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fldJobActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField4">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldHireDate">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldCommission">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldSalary">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldDepartmentId">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEmpInsert">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Insert"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

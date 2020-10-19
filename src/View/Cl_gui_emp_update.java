@@ -301,6 +301,7 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
         int empDeptno = Integer.parseInt(fldDepartmentId.getText()); 
         
         cEmp.updateEmp(empId, newEmpId, empName, empJob, empHireDate, empManager, empSalary, empCommission, empDeptno);
+        this.dispose();
     }//GEN-LAST:event_btnEmpInsertActionPerformed
 
     /**

@@ -10,22 +10,36 @@ import controller.Cl_controller_emp;
 
 /**
  * @author Carlos Tomás García Martínez 320605
- * @author Uriel Omar González jimenez  320736
- * @author Alejandro Aguirre Baeza      320646
+ * @author Uriel Omar González jimenez 320736
+ * @author Alejandro Aguirre Baeza 320646
  */
-
 public class Cl_gui_delete extends javax.swing.JFrame {
+
+    /**
+     * create a boolean variable for detect user petition 
+     * create a instance from department controller 
+     * create a instance from employee controller
+     */
     boolean isDept;
     Cl_controller_dept cdept;
     Cl_controller_emp cemp;
+
     /**
      * Creates new form Cl_gui_dept_delete
+     */
+
+    /**
+     * Default constructor that run initComponents method
      */
     public Cl_gui_delete() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
 
+    /**
+     * Constructor that initialize isDept variable for determine wich delete
+     * function execute
+     */
     public Cl_gui_delete(boolean isDept) {
         this.isDept = isDept;
         this.setLocationRelativeTo(null);
@@ -33,6 +47,11 @@ public class Cl_gui_delete extends javax.swing.JFrame {
         setText(isDept);
     }
 
+    /**
+     * This method is used to change the window title
+     *
+     * @param isDept This is the first paramter
+     */
     public void setText(boolean isDept) {
         if (isDept) {
             lblTittle.setText("Delete Department");
@@ -135,16 +154,22 @@ public class Cl_gui_delete extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * This method is used to call the controller delete function when user 
+     * click on delete button
+     *
+     * @param evt Unused
+     */
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-       if(isDept){
-           cdept = new Cl_controller_dept();
-           cdept.deleteDept(Integer.parseInt(fldNum.getText()));
-           this.dispose();
-       }else{
-           cemp = new Cl_controller_emp();
-           cemp.deleteEmp(Integer.parseInt(fldNum.getText()));
-           this.dispose();
-       }
+        if (isDept) {
+            cdept = new Cl_controller_dept();
+            cdept.deleteDept(Integer.parseInt(fldNum.getText()));
+            this.dispose();
+        } else {
+            cemp = new Cl_controller_emp();
+            cemp.deleteEmp(Integer.parseInt(fldNum.getText()));
+            this.dispose();
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**

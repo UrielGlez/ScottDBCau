@@ -19,11 +19,16 @@ import oracle.jdbc.internal.OracleTypes;
  * @author carlo
  */
 public class Cl_gui_dept_update extends javax.swing.JFrame {
-
+    /**
+     * create a instance from department controller
+     */
     Cl_controller_dept cdept = new Cl_controller_dept();
 
     /**
      * Creates new form Cl_gui_update
+     */
+    /**
+     * Default constructor that call initComponents methods
      */
     public Cl_gui_dept_update() {
         initComponents();
@@ -76,7 +81,7 @@ public class Cl_gui_dept_update extends javax.swing.JFrame {
         });
 
         btnDeptSearch.setBackground(new java.awt.Color(238, 227, 95));
-        btnDeptSearch.setText("Buscar");
+        btnDeptSearch.setText("Search");
         btnDeptSearch.setBorderPainted(false);
         btnDeptSearch.setFocusPainted(false);
         btnDeptSearch.setOpaque(false);
@@ -183,6 +188,12 @@ public class Cl_gui_dept_update extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * This method is used to call the controller get department function when 
+     * user click on search button
+     *
+     * @param evt Unused
+     */
     private void btnDeptSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeptSearchActionPerformed
         ArrayList<String> data;
         data = cdept.getDept(Integer.parseInt(fldDeptNum.getText()));
@@ -191,6 +202,12 @@ public class Cl_gui_dept_update extends javax.swing.JFrame {
         fldDeptLoc.setText(data.get(2));
     }//GEN-LAST:event_btnDeptSearchActionPerformed
 
+    /**
+     * This method is used to call the controller update function when 
+     * user click on update button
+     *
+     * @param evt Unused
+     */
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         cdept.updateDept(Integer.parseInt(fldDeptNum.getText()), Integer.parseInt(fldDeptNumNew.getText()), fldDeptName.getText(), fldDeptLoc.getText());
         this.dispose();

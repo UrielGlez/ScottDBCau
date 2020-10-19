@@ -11,6 +11,9 @@ import java.util.Date;
  * @author Uriel
  */
 public class Cl_emp {
+    /*
+    * employee class attributes
+    */
     private int empno;
     private String ename;
     private String job;
@@ -20,8 +23,23 @@ public class Cl_emp {
     private int commission;
     private int deptno;
     
+    /*
+    * Default constructor
+    */
     public Cl_emp() { }
-
+    
+    /**
+    * This is the constructor with multiple params
+    * @param empno is used for save employee id
+    * @param ename is used for save employee name
+    * @param job is used for save employee job
+    * @param mgr is used for save employee manager
+    * @param hiredate is used for save employee hire date
+    * @param salary is used for save employee salary
+    * @param commission is used for save employee commission
+    * @param deptno is used for save employee department id
+    * @exception Exception On connection error.
+    */
     public Cl_emp(int empno, String ename, String job, String mgr, Date hiredate, int salary, int commision, int deptno) {
         this.deptno = deptno;
         this.empno = empno;
@@ -31,7 +49,10 @@ public class Cl_emp {
         this.salary = salary;
         this.ename = ename;
     }
-
+    
+    /**
+    * getter's and setter's block
+    */
     public int getEmpno() {
         return empno;
     }

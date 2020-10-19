@@ -21,8 +21,14 @@ public class Cl_gui_emp_insert extends javax.swing.JFrame {
     /**
      * Creates new form Cl_gui_emp_insert
      */
+    /**
+     * create a instance from employee controller
+     */
     Cl_controller_emp cEmp = new Cl_controller_emp();
     
+    /**
+     * Default constructor that call initComponents methods
+     */
     public Cl_gui_emp_insert() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -217,7 +223,13 @@ public class Cl_gui_emp_insert extends javax.swing.JFrame {
     private void fldJobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldJobActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fldJobActionPerformed
-
+    
+    /**
+     * This method is used to call the controller insert function when user 
+     * click on insert button
+     *
+     * @param evt Unused
+     */
     private void btnEmpInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpInsertActionPerformed
         int empId = Integer.parseInt(fldEmpNo.getText()); 
         String empName = fldName.getText();

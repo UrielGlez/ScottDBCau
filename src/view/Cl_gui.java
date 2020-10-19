@@ -1,4 +1,4 @@
-    /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,15 +7,18 @@ package view;
 
 /**
  * @author Carlos Tomás García Martínez 320605
- * @author Uriel Omar González jimenez  320736
- * @author Alejandro Aguirre Baeza      320646
+ * @author Uriel Omar González jimenez 320736
+ * @author Alejandro Aguirre Baeza 320646
  */
 public class Cl_gui extends javax.swing.JFrame {
 
-    Cl_gui_table gdept;
-
     /**
      * Creates new form Cl_gui
+     */
+    Cl_gui_table gdept;
+
+     /**
+     * Default constructor that initialize gui components
      */
     public Cl_gui() {
         initComponents();
@@ -175,11 +178,22 @@ public class Cl_gui extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * This method is used to display table gui when user click employees button
+     *
+     * @param evt Unused
+     */
     private void btnEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpActionPerformed
         gdept = new Cl_gui_table(false);
         gdept.setVisible(true);
     }//GEN-LAST:event_btnEmpActionPerformed
 
+    /**
+     * This method is used to display table gui when user click departments 
+     * button
+     *
+     * @param evt Unused
+     */
     private void btnDeptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeptActionPerformed
         gdept = new Cl_gui_table(true);
         gdept.setVisible(true);

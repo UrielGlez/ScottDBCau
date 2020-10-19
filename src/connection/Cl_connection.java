@@ -13,12 +13,22 @@ import java.util.logging.Logger;
 
 public class Cl_connection {
 
+    /*
+     * Instance from connection class from sql library
+     */
     Connection conn = null;
 
+    /**
+     * Default constructor wich call the openConnection method class
+     */
     public Cl_connection() {
         openConnection();
     }
 
+    /**
+     * This method is used to initialize a sql database connection to CAU
+     * connection
+     */
     private void openConnection() {
         try {
             Class.forName("oracle.jdbc.OracleDriver");
@@ -32,10 +42,18 @@ public class Cl_connection {
         }
     }
 
+    /**
+     * This method is used to return the connection instance
+     * 
+     * @return Connection This returns connection intance
+     */
     public Connection getConnection() {
         return conn;
     }
-
+    
+    /**
+     * This method is used to close the connection
+     */
     public void closeConnection() {
         try {
             conn.close();

@@ -21,14 +21,28 @@ import oracle.jdbc.internal.OracleTypes;
  */
 public class Cl_controller_dept {
 
+    /*
+     * Instance from connection class from sql library
+     */
     public static Connection connection = null;
 
+    /**
+     * Default constructor wich gets a conection instance from Cl_connection 
+     * class
+     */
     public Cl_controller_dept() {
         if (connection == null) {
             connection = new Cl_connection().getConnection();
         }
     }
 
+    /**
+     * This method is used to create a table with the department data found in
+     * the SQL database.
+     *
+     * @return DefaultTableModel This returns a table model with the departments
+     * data
+     */
     public DefaultTableModel listDept() {
         try {
             DefaultTableModel table = new DefaultTableModel();
@@ -59,6 +73,16 @@ public class Cl_controller_dept {
         }
     }
 
+    /**
+     * This method is used to insert an department to be saved within the
+     * database
+     *
+     * @param depno This is the first paramter wich contains the department id
+     * @param dname This is the paramter wich contains the department name
+     * @param loc This is the paramter wich contains the department location
+     * @return a boolean This returns a true if department was saved
+     * successfully
+     */
     public boolean insertDept(int depno, String dname, String loc) {
         try {
             CallableStatement cstmt = connection.prepareCall("{ call PR_add_Deptno( ? , ? , ? )}");
@@ -78,6 +102,18 @@ public class Cl_controller_dept {
         }
     }
 
+    /**
+     * This method is used to update an existing department to be saved within
+     * the database
+     *
+     * @param depno This is the first paramter wich contains the department id
+     * @param newdepno This is the paramter wich contains the the new department
+     * id
+     * @param dname This is the paramter wich contains the department name
+     * @param loc This is the paramter wich contains the department location
+     * @return a boolean This returns a true if department was updated
+     * successfully
+     */
     public boolean updateDept(int depno, int newdepno, String dname, String loc) {
         try {
             CallableStatement cstmt = connection.prepareCall("{ call PR_update_Deptno ( ? , ? , ? , ? )}");
@@ -95,6 +131,14 @@ public class Cl_controller_dept {
         }
     }
 
+    /**
+     * This method is used to get a specific department from the SQL database
+     *
+     * @param depno This is the first paramter wich contains the department id 
+     * to find
+     * @return ArrayList This returns an array list wich contains the column
+     * values of a record
+     */
     public ArrayList<String> getDept(int depno) {
         ArrayList<String> data = new ArrayList<String>();
         try {
@@ -122,6 +166,14 @@ public class Cl_controller_dept {
         }
     }
 
+    /**
+     * This method is used to delete an existing department to be saved within 
+     * the database
+     *
+     * @param depno This is the first paramter wich contains the department id
+     * @return a boolean This returns a true if department was deleted
+     * successfully
+     */
     public boolean deleteDept(int depno) {
         try {
             CallableStatement cstmt = connection.prepareCall("{ call PR_delete_Deptno( ? )}");

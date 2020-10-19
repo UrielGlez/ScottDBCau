@@ -16,6 +16,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Cl_gui_table extends javax.swing.JFrame {
 
+    /**
+     * create a boolean variable for detect user petition create a instance from
+     * department controller 
+     * create a instance from employee controller 
+     * create a instance from employee insert gui create a instance from department
+     * insert gui 
+     * create a instance from employee update gui 
+     * create a instance from department update gui create a instance from delete gui
+     */
     boolean isDept;
 
     Cl_controller_dept cdept = new Cl_controller_dept();
@@ -32,11 +41,18 @@ public class Cl_gui_table extends javax.swing.JFrame {
     /**
      * Creates new form Department_view
      */
+    /**
+     * Default constructor that call initComponents methods
+     */
     public Cl_gui_table() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
 
+    /**
+     * Constructor that initialize isDept variable for determine wich data set
+     * show to user
+     */
     public Cl_gui_table(boolean isDept) {
         this.isDept = isDept;
         initComponents();
@@ -44,6 +60,12 @@ public class Cl_gui_table extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    /**
+     * This method is used to change window title and load and call 
+     * refreshTable method
+     *
+     * @param isDept This is the first paramter
+     */
     public void listing(boolean isDept) {
         if (isDept) {
             refreshTable(cdept.listDept(), isDept);
@@ -53,7 +75,14 @@ public class Cl_gui_table extends javax.swing.JFrame {
             lblTittle.setText("Employees");
         }
     }
-
+    
+    /**
+     * This method is used to load the data and fill the table to gui
+     *
+     * @param table This is the first paramter and contains the structure of the 
+     * data
+     * @param isDept This is the paramter that contains the boolean value
+     */
     public void refreshTable(DefaultTableModel table, boolean isDept) {
         tblData.setModel(table);
     }
@@ -216,12 +245,22 @@ public class Cl_gui_table extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * This method is used to display delete gui
+     *
+     * @param evt Unused
+     */
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         del = new Cl_gui_delete(isDept);
         del.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
+    /**
+     * This method is used to display update gui
+     *
+     * @param evt Unused
+     */
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         if (isDept) {
             dupd = new Cl_gui_dept_update();
@@ -233,6 +272,11 @@ public class Cl_gui_table extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
+    /**
+     * This method is used to display insert gui
+     *
+     * @param evt Unused
+     */
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
         if (isDept) {
             dins = new Cl_gui_dept_insert();

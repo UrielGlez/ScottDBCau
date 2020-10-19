@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package scott;
 
 import connection.Cl_connection;
@@ -16,6 +11,12 @@ public class Scott {
 
     public static Connection conecction = null;
     
+    /**
+   * This is the main method which create an instance of Cl_connection class
+   * @param args Unused.
+   * @return Nothing.
+   * @exception Exception On connection error.
+   */
     public static void main(String[] args) {
         try {
             Cl_connection conn = new Cl_connection();

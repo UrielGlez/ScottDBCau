@@ -11,20 +11,34 @@ package model;
  * @author Alejandro Aguirre Baeza 320646
  */
 public class Cl_dept {
-
+    /*
+    * department class attributes
+    */
     private int deptno;
     private String dname;
     private String loc;
 
+    /*
+    * Default constructor
+    */
     public Cl_dept() {
     }
-
+    
+    /**
+    * This is the constructor with multiple params
+    * @param deptno is used for save employee id
+    * @param dname is used for save employee name
+    * @param loc is used for save employee job
+    */
     public Cl_dept(int deptno, String dname, String loc) {
         this.deptno = deptno;
         this.dname = dname;
         this.loc = loc;
     }
-
+    
+    /**
+    * getter's and setter's block
+    */
     public int getDeptno() {
         return deptno;
     }

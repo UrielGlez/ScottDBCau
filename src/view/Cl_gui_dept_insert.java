@@ -13,9 +13,15 @@ import controller.Cl_controller_dept;
  * @author Alejandro Aguirre Baeza      320646
  */
 public class Cl_gui_dept_insert extends javax.swing.JFrame {
+    /**
+     * create a instance from department controller
+     */
     Cl_controller_dept cdept = new Cl_controller_dept();
     /**
      * Creates new form Cl_gui_update
+     */
+    /**
+     * Default constructor that call initComponents methods
      */
     public Cl_gui_dept_insert() {
         initComponents();
@@ -152,7 +158,12 @@ public class Cl_gui_dept_insert extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * This method is used to call the controller insert function when user 
+     * click on insert button
+     *
+     * @param evt Unused
+     */
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         cdept.insertDept(Integer.parseInt(fldDeptNum.getText()),fldDeptName.getText(),fldDeptLoc.getText());
         this.dispose();

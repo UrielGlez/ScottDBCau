@@ -16,9 +16,16 @@ import java.util.Date;
  * @author Alejandro Aguirre Baeza      320646
  */ 
 public class Cl_gui_emp_update extends javax.swing.JFrame {
+    /**
+     * create a instance from department controller
+     */
     Cl_controller_emp cEmp = new Cl_controller_emp();
     /**
      * Creates new form Cl_gui_emp_insert
+     */
+    
+    /**
+     * Default constructor that call initComponents methods
      */
     public Cl_gui_emp_update() {
         initComponents();
@@ -62,7 +69,6 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(410, 540));
-        setPreferredSize(new java.awt.Dimension(410, 540));
         setResizable(false);
 
         lblName.setText("Name:");
@@ -106,7 +112,7 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
         });
 
         btnSearchEmp.setBackground(new java.awt.Color(238, 227, 95));
-        btnSearchEmp.setText("Buscar");
+        btnSearchEmp.setText("Search");
         btnSearchEmp.setBorderPainted(false);
         btnSearchEmp.setFocusPainted(false);
         btnSearchEmp.setOpaque(false);
@@ -264,6 +270,12 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fldJobActionPerformed
 
+    /**
+     * This method is used to call the controller get employee function when 
+     * user click on search button
+     *
+     * @param evt Unused
+     */
     private void btnSearchEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchEmpActionPerformed
         ArrayList<String> data;
         data = cEmp.getEmp(Integer.parseInt(fldEmpNo.getText()));
@@ -289,6 +301,12 @@ public class Cl_gui_emp_update extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fldNewEmpActionPerformed
 
+    /**
+     * This method is used to call the controller update function when 
+     * user click on update button
+     *
+     * @param evt Unused
+     */
     private void btnEmpInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpInsertActionPerformed
         int empId = Integer.parseInt(fldEmpNo.getText()); 
         int newEmpId = Integer.parseInt(fldNewEmp.getText()); 
